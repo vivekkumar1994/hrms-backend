@@ -13,7 +13,7 @@ Base.metadata.create_all(bind=engine)
 # Allowed frontend domains
 origins = [
     "http://localhost:3000",  # local development
-    "https://hrms-frontend-omega-woad.vercel.app",  # live frontend
+    "https://hrms-frontend-xi-smoky.vercel.app",  # live frontend
 ]
 
 app.add_middleware(
