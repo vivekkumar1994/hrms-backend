@@ -7,12 +7,13 @@ from app.attendance_routes import router as attendance_router
 
 app = FastAPI(title="HRMS Lite API")
 
-# create tables
+# Create tables
 Base.metadata.create_all(bind=engine)
 
+# Allowed frontend domains
 origins = [
-    "http://localhost:3000",
-    "https://hrms-frontend-omega-woad.vercel.app",
+    "http://localhost:3000",  # local development
+    "https://hrms-frontend-omega-woad.vercel.app",  # live frontend
 ]
 
 app.add_middleware(
@@ -23,6 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Routers
 app.include_router(employee_router)
 app.include_router(attendance_router)
 
